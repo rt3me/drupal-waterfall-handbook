@@ -1,4 +1,4 @@
 name: waterfall-handbook
 recipe: drupal10
 config:
-  webroot: web
+  webroot: docroot
