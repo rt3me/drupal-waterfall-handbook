@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '34a9d5ec7b240d1118413c89bfb39a593fe520b8',
+        'reference' => '07fdd7dcce13b533cdc72449f2a4b65a0f0fecbe',
         'name' => 'drupal/recommended-project',
         'dev' => true,
     ),
@@ -340,7 +340,16 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '34a9d5ec7b240d1118413c89bfb39a593fe520b8',
+            'reference' => '07fdd7dcce13b533cdc72449f2a4b65a0f0fecbe',
+            'dev_requirement' => false,
+        ),
+        'drupal/stage_file_proxy' => array(
+            'pretty_version' => '2.1.3',
+            'version' => '2.1.3.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/stage_file_proxy',
+            'aliases' => array(),
+            'reference' => '2.1.3',
             'dev_requirement' => false,
         ),
         'drush/drush' => array(
@@ -532,8 +541,8 @@
         'psr/container-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.1|2.0',
-                1 => '^1.0',
+                0 => '^1.0',
+                1 => '1.1|2.0',
             ),
         ),
         'psr/event-dispatcher' => array(
