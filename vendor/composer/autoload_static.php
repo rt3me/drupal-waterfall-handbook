@@ -12,9 +12,9 @@ class ComposerStaticInit38224af4968c9dff5017de51454fecb7
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
-        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
+        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
@@ -111,6 +111,8 @@ class ComposerStaticInit38224af4968c9dff5017de51454fecb7
         'D' => 
         array (
             'Drush\\' => 6,
+            'Drupal\\mysql56\\' => 15,
+            'Drupal\\Driver\\Database\\mysql\\' => 29,
             'Drupal\\Core\\' => 12,
             'Drupal\\Composer\\Plugin\\Scaffold\\' => 32,
             'Drupal\\Component\\' => 17,
@@ -359,6 +361,14 @@ class ComposerStaticInit38224af4968c9dff5017de51454fecb7
         'Drush\\' => 
         array (
             0 => __DIR__ . '/..' . '/drush/drush/src',
+        ),
+        'Drupal\\mysql56\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/web/modules/contrib/mysql56/src',
+        ),
+        'Drupal\\Driver\\Database\\mysql\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/web/modules/contrib/mysql56',
         ),
         'Drupal\\Core\\' => 
         array (
