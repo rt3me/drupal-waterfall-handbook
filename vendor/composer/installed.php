@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '65916001f110541ecbf55a5b0217882beaceaeff',
+        'reference' => '92050ceaa3233fbbc5dcc5bb2711830a2bec510c',
         'name' => 'drupal/recommended-project',
         'dev' => true,
     ),
@@ -125,6 +125,15 @@
             'install_path' => __DIR__ . '/../consolidation/site-process',
             'aliases' => array(),
             'reference' => '6c44638d7af8a8b4abe12c3180701243f480539d',
+            'dev_requirement' => false,
+        ),
+        'cweagans/composer-patches' => array(
+            'pretty_version' => '1.7.3',
+            'version' => '1.7.3.0',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/../cweagans/composer-patches',
+            'aliases' => array(),
+            'reference' => 'e190d4466fe2b103a55467dfa83fc2fecfcaf2db',
             'dev_requirement' => false,
         ),
         'dflydev/dot-access-data' => array(
@@ -349,7 +358,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '65916001f110541ecbf55a5b0217882beaceaeff',
+            'reference' => '92050ceaa3233fbbc5dcc5bb2711830a2bec510c',
             'dev_requirement' => false,
         ),
         'drupal/stage_file_proxy' => array(
