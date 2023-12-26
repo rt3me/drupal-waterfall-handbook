@@ -9,11 +9,13 @@ dependencies:
     - field.field.node.waterfall.field_official_website
     - field.field.node.waterfall.field_walking_and_driving_instru
     - field.field.node.waterfall.field_waterfall_height
+    - field.field.node.waterfall.field_waterfall_video
     - image.style.thumbnail
     - node.type.waterfall
   module:
     - image
     - link
+    - media_library
     - path
     - text
 id: node.waterfall.default
@@ -74,6 +76,13 @@ content:
     region: content
     settings:
       placeholder: ''
+    third_party_settings: {  }
+  field_waterfall_video:
+    type: media_library_widget
+    weight: 126
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   path:
     type: path

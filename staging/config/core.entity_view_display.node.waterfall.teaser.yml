@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.waterfall.field_official_website
     - field.field.node.waterfall.field_walking_and_driving_instru
     - field.field.node.waterfall.field_waterfall_height
+    - field.field.node.waterfall.field_waterfall_video
     - image.style.medium
     - node.type.waterfall
   module:
@@ -50,3 +51,4 @@ hidden:
   field_official_website: true
   field_walking_and_driving_instru: true
   field_waterfall_height: true
+  field_waterfall_video: true
