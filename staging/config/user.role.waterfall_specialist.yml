@@ -9,6 +9,7 @@ dependencies:
   module:
     - media
     - node
+    - system
     - toolbar
 id: waterfall_specialist
 label: 'Waterfall Specialist'
@@ -54,4 +55,5 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view page revisions'
+  - 'view the administration theme'
   - 'view waterfall revisions'
