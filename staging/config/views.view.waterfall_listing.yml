@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.waterfall_listing_display
     - field.storage.node.field_waterfall_location
     - node.type.waterfall
     - system.menu.main
@@ -156,7 +156,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: waterfall_listing_display
       query:
         type: views_query
         options:
