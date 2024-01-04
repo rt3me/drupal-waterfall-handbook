@@ -1,0 +1,15 @@
+uuid: 9ed3b0a9-75a8-472d-880e-6ec08b11fa6a
+langcode: en
+status: true
+dependencies: {  }
+name: 500x500_square
+label: '500x500 Square'
+effects:
+  46a2626d-5b5a-4606-8c92-b4d62c9321ee:
+    uuid: 46a2626d-5b5a-4606-8c92-b4d62c9321ee
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 500
+      anchor: center-center
