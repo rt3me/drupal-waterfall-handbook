@@ -1,0 +1,25 @@
+uuid: 13e81fef-b66b-4df5-a352-a4b2f908622f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2665335e-9166-4464-828c-00c9a4106868'
+  module:
+    - block_content
+  theme:
+    - simplesmart
+id: simplesmart_welcomeblock
+theme: simplesmart
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:2665335e-9166-4464-828c-00c9a4106868'
+settings:
+  id: 'block_content:2665335e-9166-4464-828c-00c9a4106868'
+  label: 'Welcome Block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

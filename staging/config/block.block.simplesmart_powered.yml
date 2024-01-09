@@ -1,0 +1,22 @@
+uuid: a1593c3b-fe47-4299-a4d3-6cd55adf6c0a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - simplesmart
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: simplesmart_powered
+theme: simplesmart
+region: sidebar_first
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

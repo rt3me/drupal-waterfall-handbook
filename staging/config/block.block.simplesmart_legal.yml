@@ -1,0 +1,25 @@
+uuid: 7237f049-783a-4069-a08f-7455a2c54a66
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.legal
+  module:
+    - system
+  theme:
+    - simplesmart
+id: simplesmart_legal
+theme: simplesmart
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:legal'
+settings:
+  id: 'system_menu_block:legal'
+  label: Legal
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
