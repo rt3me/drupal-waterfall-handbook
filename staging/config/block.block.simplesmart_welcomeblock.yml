@@ -10,7 +10,7 @@ dependencies:
     - simplesmart
 id: simplesmart_welcomeblock
 theme: simplesmart
-region: sidebar_first
+region: header
 weight: 0
 provider: null
 plugin: 'block_content:2665335e-9166-4464-828c-00c9a4106868'

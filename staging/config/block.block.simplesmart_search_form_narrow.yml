@@ -10,7 +10,7 @@ _core:
   default_config_hash: yEBET0cqDbk8dkWzaJw-8CKft0961VBflsISoSR6Lj8
 id: simplesmart_search_form_narrow
 theme: simplesmart
-region: primary_menu
+region: header
 weight: -4
 provider: null
 plugin: search_form_block
