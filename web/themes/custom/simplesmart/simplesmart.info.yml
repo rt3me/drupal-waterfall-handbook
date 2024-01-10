@@ -4,3 +4,4 @@ description: "A sleek & practical theme for curious minds."
 core_version_requirement: ^8 || ^9 || ^10
 core: 8.x
 base theme: classy
+screenshot: simplesmartscreenshot.png
