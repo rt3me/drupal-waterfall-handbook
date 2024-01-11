@@ -28,6 +28,9 @@ web/sites/*/private
 # Ignore multi-site test environment.
 web/sites/simpletest
 
+# Misc.
+**/.DS_Store
+
 # If you prefer to store your .gitignore file in the sites/ folder, comment
 # or delete the previous settings and uncomment the following ones, instead.
 
