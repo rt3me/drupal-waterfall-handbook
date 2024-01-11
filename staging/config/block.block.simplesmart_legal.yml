@@ -10,8 +10,8 @@ dependencies:
     - simplesmart
 id: simplesmart_legal
 theme: simplesmart
-region: header
-weight: 0
+region: footer
+weight: -9
 provider: null
 plugin: 'system_menu_block:legal'
 settings:

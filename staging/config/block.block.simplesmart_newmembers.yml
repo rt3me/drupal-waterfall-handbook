@@ -11,8 +11,8 @@ dependencies:
     - simplesmart
 id: simplesmart_newmembers
 theme: simplesmart
-region: header
-weight: 0
+region: content
+weight: -1
 provider: null
 plugin: 'block_content:220090d6-3f1a-4536-a0b2-0cfe8b55c253'
 settings:

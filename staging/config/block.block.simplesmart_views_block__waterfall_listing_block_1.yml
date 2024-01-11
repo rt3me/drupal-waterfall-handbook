@@ -10,7 +10,7 @@ dependencies:
     - simplesmart
 id: simplesmart_views_block__waterfall_listing_block_1
 theme: simplesmart
-region: header
+region: content
 weight: 0
 provider: null
 plugin: 'views_block:waterfall_listing-block_1'
