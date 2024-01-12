@@ -3,7 +3,7 @@ type: theme
 description: "A sleek & practical theme for curious minds."
 core_version_requirement: ^8 || ^9 || ^10
 core: 8.x
-base theme: classy
+base theme: stable
 screenshot: simplesmartscreenshot.png
 regions:
   header: Header
