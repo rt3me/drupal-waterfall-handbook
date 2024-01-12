@@ -12,7 +12,7 @@ dependencies:
 id: simplesmart_newzealandhikingguide
 theme: simplesmart
 region: content
-weight: -2
+weight: -1
 provider: null
 plugin: 'block_content:dcf1c652-f793-4489-9704-b1df454d67de'
 settings:
