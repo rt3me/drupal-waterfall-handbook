@@ -11,7 +11,7 @@ dependencies:
 id: simplesmart_views_block__waterfall_listing_block_1
 theme: simplesmart
 region: content
-weight: 1
+weight: 0
 provider: null
 plugin: 'views_block:waterfall_listing-block_1'
 settings:

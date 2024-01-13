@@ -11,7 +11,7 @@ dependencies:
 id: simplesmart_welcomeblock
 theme: simplesmart
 region: content
-weight: -7
+weight: -8
 provider: null
 plugin: 'block_content:2665335e-9166-4464-828c-00c9a4106868'
 settings:

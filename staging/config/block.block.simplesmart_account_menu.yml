@@ -13,7 +13,7 @@ _core:
 id: simplesmart_account_menu
 theme: simplesmart
 region: simplesmartmenu
-weight: -10
+weight: -8
 provider: null
 plugin: 'system_menu_block:account'
 settings:
