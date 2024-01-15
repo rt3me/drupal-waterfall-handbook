@@ -1,0 +1,7 @@
+mymodule.simplecontent:
+  path: '/mycustompath'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\MyController::simpleContent'
+    _title: 'Simplicity is the ultimate sophistication'
+  requirements:
+    _permission: 'access content'
