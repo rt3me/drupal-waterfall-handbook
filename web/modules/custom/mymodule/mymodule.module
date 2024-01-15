@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * This file demonstrates how to use hook functions.
+ */
+
+/**
+ * Implements hook_cron()
+ */
+function mymodule_cron() {
+  \Drupal::messenger()->addMessage(t("Hello from mymodule cron hook! :) :)"));
+}
