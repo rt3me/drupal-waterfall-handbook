@@ -57,4 +57,13 @@ class RSVPForm extends FormBase {
 
     return $form;
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $submitted_email = $form_state->getValue('email');
+    $this->messenger()->addMessage(t("The form is working! You entered: @entry",
+      ['@entry' => $submitted_email]));
+  }
 }
