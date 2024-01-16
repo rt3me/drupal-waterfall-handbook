@@ -10,19 +10,16 @@ namespace Drupal\mymodule\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
-class MyController extends ControllerBase
-{
+class MyController extends ControllerBase {
 
-  public function simpleContent()
-  {
+  public function simpleContent() {
     return [
       '#type' => 'markup',
       '#markup' => t('Hello Drupal world. Time flies like an arrow, fruit flies like a banana.'),
     ];
   }
 
-  public function variableContent($name_1, $name_2)
-  {
+  public function variableContent($name_1, $name_2) {
     return [
       '#type' => 'markup',
       '#markup' => t(
