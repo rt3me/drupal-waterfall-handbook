@@ -74,8 +74,63 @@ class RSVPForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $submitted_email = $form_state->getValue('email');
-    $this->messenger()->addMessage(t('The form is working! You entered: @entry',
-      ['@entry' => $submitted_email]));
+
+    try {
+      // Initiate variables to save to database.
+
+      // Get current user ID.
+      $uid = \Drupal::currentUser()->id();
+
+      // Demonstration for how to load a full user object of the current user.
+      // This $full_user variable is not needed for this code,
+      // but is shown for demonstration purposes.
+      $full_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+
+      // Obtain values as entered into the Form.
+      $nid = $form_state->getValue('nid');
+      $email = $form_state->getValue('email');
+
+      // Get the current time the Drupal way.
+      $current_time = \Drupal::time()->getRequestTime();
+
+      // Save the values to the database
+
+      // Start to build a query builder object $query.
+      // https://www.drupal.org/docs/8/api/database-api/insert-queries
+      $query = \Drupal::database()->insert('rsvplist');
+
+      // Specify the field that the query will insert into.
+      $query->fields([
+        'uid',
+        'nid',
+        'mail',
+        'created',
+      ]);
+
+      // Set the values of the fields we selected.
+      // Note that they must be in the same order as we defined them
+      // in the $query->fields([...[) above.
+      $query->values([
+        $uid,
+        $nid,
+        $email,
+        $current_time,
+      ]);
+
+      // Execute the query.
+      // Drupal handles the exact syntax of the query automatically.
+      $query->execute();
+
+      // Display a success message to the user.
+      \Drupal::messenger()->addMessage(
+        t('Thank you for your RSVP, you are on the list for the event!')
+      );
+    }
+    catch (\Exception $e) {
+      \Drupal::messenger()->addError(
+        t('Unable to save RSVP settings at this time due to a database error.
+          Please try again')
+      );
+    }
   }
 }
