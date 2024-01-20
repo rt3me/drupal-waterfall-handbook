@@ -12,7 +12,6 @@ dependencies:
     - file
     - node
     - path
-    - rsvplist
     - system
     - taxonomy
     - toolbar
@@ -47,5 +46,4 @@ permissions:
   - 'revert all revisions'
   - 'view all revisions'
   - 'view own unpublished content'
-  - 'view rsvplist'
   - 'view the administration theme'

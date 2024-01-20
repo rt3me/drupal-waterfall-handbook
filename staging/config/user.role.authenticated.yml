@@ -10,7 +10,6 @@ dependencies:
     - file
     - filter
     - media
-    - rsvplist
     - search
     - shortcut
     - system
@@ -31,4 +30,3 @@ permissions:
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view media'
-  - 'view rsvplist'

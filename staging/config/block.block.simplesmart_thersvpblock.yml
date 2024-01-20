@@ -1,4 +1,4 @@
-uuid: 27faabbf-e5b5-4015-bc98-cd2f494df615
+uuid: ab6f70c3-7b05-4ef7-b9b0-44b37fb64bdb
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: simplesmart_thersvpblock
 theme: simplesmart
 region: content
-weight: 0
+weight: 1
 provider: null
 plugin: rsvp_block
 settings:
