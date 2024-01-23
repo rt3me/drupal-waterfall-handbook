@@ -1,20 +1,26 @@
 <?php
 
-/** 
+/**
  * @file
  * Install, update, and uninstall functions for the rsvplist module.
  */
 
+/**
+ * Implements hook_schema().
+ */
 function rsvplist_schema() {
   // Create a database table called 'rsvplist' with the following columns:
-  // 1. id [serial], 2. uid [int], 3. nid [int], 4. mail [varchar], 5. created [int]
+  // 1. id [serial], 2. uid [int], 3. nid [int], 4. mail [varchar],
+  // 5. created [int].
   $schema['rsvplist'] = [
     'description' => 'Stores, email, timestamp, nid and uid for an RSVP.',
     'fields' => [
       'id' => [
         'description' => 'The primary identifier for the record.',
-        'type' => 'serial', // automatically increment after every record insert
-        'size' => 'small', // tiny / small / medium / normal / big
+        // Automatically increment after every record insert.
+        'type' => 'serial',
+        // Tiny / small / medium / normal / big.
+        'size' => 'small',
         'unsigned' => TRUE,
         'not null' => TRUE,
       ],
@@ -53,7 +59,7 @@ function rsvplist_schema() {
   ];
 
   // Create a database table named 'rsvplist_enabled' with the following fields:
-  // 1. nid [int]
+  // 1. nid [int].
   $schema['rsvplist_enabled'] = [
     'description' => 'Tracks whether RSVP is enabled or not for a node.',
     'fields' => [
