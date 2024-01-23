@@ -1,19 +1,19 @@
 <?php
 
-/**
- * @file
- * Creates a block which displays the RSVPForm contained in RSVPForm.php
- */
-
 namespace Drupal\rsvplist\Plugin\Block;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\Core\Access\AccessResult;
+
+/**
+ * @file
+ * Creates a block which displays the RSVPForm contained in RSVPForm.php.
+ */
 
 /**
  * Provide the RSVP main block.
- * 
+ *
  * @Block(
  *   id = "rsvp_block",
  *   admin_label = @Translation("The RSVP Block")
@@ -36,10 +36,11 @@ class RSVPBlock extends BlockBase {
     // If viewing a node, get the fully loaded node object.
     $node = \Drupal::routeMatch()->getParameter('node');
 
-    if ( !(is_null($node)) ) {
+    if (!(is_null($node))) {
       return AccessResult::allowedIfHasPermission($account, 'view rsvplist');
     }
 
     return AccessResult::forbidden();
   }
+
 }
