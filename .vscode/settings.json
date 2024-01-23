@@ -43,4 +43,7 @@
   "emptyIndent.removeIndent": true,
   "emptyIndent.highlightIndent": false,
   "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
+
+  "phpcs.enable": true,
+  "phpcs.standard": "Drupal,DrupalPractice",
 }
