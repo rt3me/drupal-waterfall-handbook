@@ -45,7 +45,7 @@
   "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
 
   /* PHP Validation */
-  "php.validate.enable": true,
+  "php.validate.enable": false,
   "php.validate.executablePath": "/path/to/php",
   "php.validate.run": "onType",
 
