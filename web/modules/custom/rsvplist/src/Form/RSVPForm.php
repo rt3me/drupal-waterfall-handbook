@@ -1,25 +1,28 @@
 <?php
 
-/**
- * @file
- * A form to collect an email address for RSVP details.
- */
-
 namespace Drupal\rsvplist\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * @file
+ * A form to collect an email address for RSVP details.
+ */
+
+/**
+ * {@inheritdoc}
+ */
 class RSVPForm extends FormBase {
 
-  /** 
+  /**
    * {@inheritdoc}
    */
   public function getFormId() {
     return 'rsvplist_email_form';
   }
 
-  /** 
+  /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
@@ -28,17 +31,17 @@ class RSVPForm extends FormBase {
 
     // Some pages may not be nodes though and $node will be NULL on those pages.
     // If a node was loaded, get the node id.
-    if ( !(is_null($node)) ) {
+    if (!(is_null($node))) {
       $nid = $node->id();
     }
     else {
-      // If a node could not be loaded, default to 0;
+      // If a node could not be loaded, default to 0.
       $nid = 0;
     }
 
     // Establish the $form render array. It has an email text field,
     // a submit button, and a hidden field containing the node ID.
-    $form['email'] = array( 
+    $form['email'] = array(
       '#type' => 'textfield',
       '#title' => t('Email address'),
       '#size' => 25,
@@ -63,7 +66,7 @@ class RSVPForm extends FormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $value = $form_state->getValue('email');
-    if ( !(\Drupal::service('email.validator')->isValid($value)) ) {
+    if (!(\Drupal::service('email.validator')->isValid($value))) {
       $form_state->setErrorByName('email',
         $this->t('It appears that @mail is not a valid email. Please try again.',
           ['@mail' => $value]));
@@ -77,7 +80,6 @@ class RSVPForm extends FormBase {
 
     try {
       // Initiate variables to save to database.
-
       // Get current user ID.
       $uid = \Drupal::currentUser()->id();
 
@@ -93,8 +95,7 @@ class RSVPForm extends FormBase {
       // Get the current time the Drupal way.
       $current_time = \Drupal::time()->getRequestTime();
 
-      // Save the values to the database
-
+      // Save the values to the database.
       // Start to build a query builder object $query.
       // https://www.drupal.org/docs/8/api/database-api/insert-queries
       $query = \Drupal::database()->insert('rsvplist');
@@ -123,14 +124,15 @@ class RSVPForm extends FormBase {
 
       // Display a success message to the user.
       \Drupal::messenger()->addMessage(
-        t('Thank you for your RSVP, you are on the list for the event!')
+        $this->t('Thank you for your RSVP, you are on the list for the event!')
       );
     }
     catch (\Exception $e) {
       \Drupal::messenger()->addError(
-        t('Unable to save RSVP settings at this time due to a database error.
+        $this->t('Unable to save RSVP settings at this time due to a database error.
           Please try again')
       );
     }
   }
+
 }
