@@ -44,6 +44,12 @@
   "emptyIndent.highlightIndent": false,
   "emptyIndent.highlightColor": "rgba(246,36,89,0.6)",
 
+  /* PHP Validation */
+  "php.validate.enable": true,
+  "php.validate.executablePath": "/path/to/php",
+  "php.validate.run": "onType",
+
+  /* PHPCS */
   "phpcs.enable": true,
   "phpcs.standard": "Drupal,DrupalPractice",
 }
