@@ -39,6 +39,7 @@
     "core/includes",
     "../vendor/"
   ],
+  "intelephense.format.braces": "k&r",
 
   /* Empty Indent */
   "emptyIndent.removeIndent": true,
