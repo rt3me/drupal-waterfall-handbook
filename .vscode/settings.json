@@ -49,6 +49,10 @@
   "php.validate.executablePath": "/path/to/php",
   "php.validate.run": "onType",
 
+  /* PHP Docblocker */
+  "php-docblocker.gap": true,
+  "php-docblocker.useShortNames": true,
+
   /* PHPCS */
   "phpcs.enable": true,
   "phpcs.standard": "Drupal,DrupalPractice",
