@@ -53,6 +53,10 @@
   "php-docblocker.gap": true,
   "php-docblocker.useShortNames": true,
 
+  /* Composer extension */
+  "composer.enabled": true,
+  "composer.executablePath": "/usr/local/bin/composer",
+
   /* PHPCS */
   "phpcs.enable": true,
   "phpcs.standard": "Drupal,DrupalPractice",
