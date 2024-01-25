@@ -3,8 +3,7 @@
 namespace Drupal\rsvplist\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Database\Connection;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Database\Database;
 
 /**
  * @file
@@ -20,32 +19,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ReportController extends ControllerBase {
 
   /**
-   * The database connection.
-   *
-   * @var \Drupal\Core\Database\Connection
-   */
-  protected $connection;
-
-  /**
-   * Constructs an object.
-   *
-   * @param \Drupal\Core\Database\Connection $connection
-   *   The database connection.
-   */
-  public function __construct(Connection $connection) {
-    $this->connection = $connection;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('database')
-    );
-  }
-
-  /**
    * Gets and returns all RSVPs for all nodes.
    *
    * These are returned as an associative array, with each row
@@ -56,19 +29,22 @@ class ReportController extends ControllerBase {
    */
   protected function load() {
     try {
+
       // https://www.drupal.org/docs/8/api/database-api/dynamic-queries
       // introduction-to-dynamic-queries
-      $select_query = $this->connection->select('rsvplist', 'r');
+      $database = \Drupal::database();
+      $select_query = $database->select('rsvplist', 'r');
 
       // Join the user table, so we can get the entry creator's username.
       $select_query->join('users_field_data', 'u', 'r.uid = u.uid');
+
       // Join the node table, so we can the the event's name.
       $select_query->join('node_field_data', 'n', 'r.nid = n.nid');
 
       // Select these specific fields for the output.
       $select_query->addField('u', 'name', 'username');
       $select_query->addField('n', 'title');
-      $select_query->addField('r', 'email');
+      $select_query->addField('r', 'mail');
 
       // Note that fetchAll() and fetchAllAssoc() will, by default, fetch using
       // whatever fetch mode was set on the query
@@ -79,6 +55,7 @@ class ReportController extends ControllerBase {
       // https://www.php.net/manual/en/pdostatement.fetch.php
       $entries = $select_query->execute()->fetchAll(\PDO::FETCH_ASSOC);
 
+      // Return the associative array of RSVPList entries.
       return $entries;
     }
     catch (\Exception $e) {
