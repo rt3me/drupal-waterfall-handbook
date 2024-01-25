@@ -3,7 +3,9 @@
 namespace Drupal\rsvplist\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Database\Database;
+use Drupal\Core\Database\Connection;
+use Drupal\Core\Messenger\MessengerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @file
@@ -19,6 +21,43 @@ use Drupal\Core\Database\Database;
 class ReportController extends ControllerBase {
 
   /**
+   * The messenger.
+   *
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  /**
+   * The database connection.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected $connection;
+
+  /**
+   * Constructs an object.
+   *
+   * @param \Drupal\Core\Database\Connection $connection
+   *   The database connection.
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   The messenger.
+   */
+  public function __construct(Connection $connection, MessengerInterface $messenger) {
+    $this->connection = $connection;
+    $this->messenger = $messenger;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('database'),
+      $container->get('messenger')
+    );
+  }
+
+  /**
    * Gets and returns all RSVPs for all nodes.
    *
    * These are returned as an associative array, with each row
@@ -29,15 +68,12 @@ class ReportController extends ControllerBase {
    */
   protected function load() {
     try {
-
       // https://www.drupal.org/docs/8/api/database-api/dynamic-queries
       // introduction-to-dynamic-queries
-      $database = \Drupal::database();
-      $select_query = $database->select('rsvplist', 'r');
+      $select_query = $this->connection->select('rsvplist', 'r');
 
       // Join the user table, so we can get the entry creator's username.
       $select_query->join('users_field_data', 'u', 'r.uid = u.uid');
-
       // Join the node table, so we can the the event's name.
       $select_query->join('node_field_data', 'n', 'r.nid = n.nid');
 
@@ -55,7 +91,6 @@ class ReportController extends ControllerBase {
       // https://www.php.net/manual/en/pdostatement.fetch.php
       $entries = $select_query->execute()->fetchAll(\PDO::FETCH_ASSOC);
 
-      // Return the associative array of RSVPList entries.
       return $entries;
     }
     catch (\Exception $e) {
