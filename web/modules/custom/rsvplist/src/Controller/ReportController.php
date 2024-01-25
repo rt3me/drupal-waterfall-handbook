@@ -4,7 +4,6 @@ namespace Drupal\rsvplist\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Connection;
-use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -21,13 +20,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ReportController extends ControllerBase {
 
   /**
-   * The messenger.
-   *
-   * @var \Drupal\Core\Messenger\MessengerInterface
-   */
-  protected $messenger;
-
-  /**
    * The database connection.
    *
    * @var \Drupal\Core\Database\Connection
@@ -39,12 +31,9 @@ class ReportController extends ControllerBase {
    *
    * @param \Drupal\Core\Database\Connection $connection
    *   The database connection.
-   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
-   *   The messenger.
    */
-  public function __construct(Connection $connection, MessengerInterface $messenger) {
+  public function __construct(Connection $connection) {
     $this->connection = $connection;
-    $this->messenger = $messenger;
   }
 
   /**
@@ -52,8 +41,7 @@ class ReportController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('database'),
-      $container->get('messenger')
+      $container->get('database')
     );
   }
 
