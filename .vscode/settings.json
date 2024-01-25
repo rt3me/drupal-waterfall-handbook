@@ -48,7 +48,7 @@
 
   /* PHP Validation */
   "php.validate.enable": false,
-  "php.validate.executablePath": "/path/to/php",
+  "php.validate.executablePath": "/opt/homebrew/bin/php",
   "php.validate.run": "onType",
 
   /* PHP Docblocker */
@@ -57,7 +57,7 @@
 
   /* Composer extension */
   "composer.enabled": true,
-  "composer.executablePath": "/usr/local/bin/composer",
+  "composer.executablePath": "/opt/homebrew/bin/composer",
 
   /* Twig Language 2 extension */
   "emmet.includeLanguages": {
