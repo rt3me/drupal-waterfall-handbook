@@ -36,8 +36,14 @@ class RSVPBlock extends BlockBase {
     // If viewing a node, get the fully loaded node object.
     $node = \Drupal::routeMatch()->getParameter('node');
 
+    // Determine if the currently viewed page is a node.
     if (!(is_null($node))) {
-      return AccessResult::allowedIfHasPermission($account, 'view rsvplist');
+      // Determine if RSVP collections are enabled on the node.
+      $enabler = \Drupal::service('rsvplist.enabler');
+      if ($enabler->isEnabled($node)) {
+        // Determine if user has permission to view the block.
+        return AccessResult::allowedIfHasPermission($account, 'view rsvplist');
+      }
     }
 
     return AccessResult::forbidden();
